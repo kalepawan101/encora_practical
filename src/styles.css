@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.error-text{
+    color: red;
+}
+
+.main-container{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 30px;
+}
+
+.border-bottom-dotted{
+    border-bottom: 1px dotted darkgrey;
+}
+
+.border-right-dotted{
+    border-right: 1px dotted darkgrey;
+}
+
+.border-grey{
+    border: 1px solid grey;
+}
+
+.p-0{
+    padding:0;
+}
+.pl-5{
+    padding-left:5px;
+}
+.pr-5{
+    padding-right:5px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.font-14{
+    font-size: 14px;
+}
+.font-20{
+    font-size: 20px;
+}

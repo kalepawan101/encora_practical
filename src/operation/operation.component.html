@@ -1,0 +1,54 @@
+<div class="row main-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 border-bottom-dotted">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="page-title">Notes</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 end-xs">
+                <button mat-stroked-button color="warn" routerLink="/login">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-10 border-right-dotted">
+        <div class="row border-grey" *ngFor="let note of noteData; let i=index">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <p class="font-20">{{note.title}}</p>
+                <p class="font-14">{{note.body}}</p>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button (click)="setForm(i)" mat-button matSuffix mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="delete(i)" mat-button matSuffix mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="row border-grey center-xs" *ngIf="noteData.length==0">
+            <p>No data available</p>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-10">
+        <form [formGroup]="noteForm" (ngSubmit)="submit()" novalidate>
+            <div class="row">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Title *" formControlName="title">
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="Body *" cols="6" formControlName="body"></textarea>
+                </mat-form-field>
+            </div>
+
+            <div class="row end-xs">
+                <button type="submit" mat-flat-button color="primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

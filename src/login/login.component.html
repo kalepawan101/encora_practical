@@ -1,0 +1,33 @@
+<div class="row center-xs">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3  ">
+        <div class="box">
+            <p class="login-title">Login Form</p>
+            <form name="loginForm" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+                <div class="row">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Username" name="username" [(ngModel)]="model.username"
+                            #username="ngModel" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="full-width">
+                        <input matInput [type]="showPassword ? 'text' : 'password' " placeholder="Password"
+                            name="password" [(ngModel)]="model.password" #password="ngModel" required>
+                        <button (click)="showPassword=!showPassword" *ngIf="!showPassword" mat-button matSuffix
+                            mat-icon-button>
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                        <button (click)="showPassword=!showPassword" *ngIf="showPassword" mat-button matSuffix
+                            mat-icon-button>
+                            <mat-icon>visibility_off</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <button type="submit" [disabled]="!f.form.valid" mat-flat-button color="primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
